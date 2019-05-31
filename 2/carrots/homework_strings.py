@@ -86,7 +86,7 @@ def count_nucleotides(dna):
         counts = []
         for nucleotide in dna_nucleotides:
             counts.append(pair[1].count(nucleotide))
-        num_of_nucleotides.append({pair[0]: {k: v for (k, v) in zip(dna_nucleotides, counts)}})
+        num_of_nucleotides.append((pair[0], {k: v for (k, v) in zip(dna_nucleotides, counts)}))
 
     return num_of_nucleotides
 
@@ -118,7 +118,7 @@ def translate_rna_to_protein(rna):
             pre_amino_acids.append(pair[1][index - 3: index])
             index += 3
 
-        protein.append({pair[0]: [codons[codon] for codon in pre_amino_acids]})
+        protein.append('>' + pair[0] + '\n' + ''.join([codons[codon] for codon in pre_amino_acids]))
 
     return protein
 
@@ -129,12 +129,12 @@ def histogram(statistics):
     colors = ['#94b8b8', '#bf4040']
 
     for entry in statistics:
-        data = list(entry.values())[0]
+        data = entry[1]
         stats = [v for v in data.values()]
         nucleotides = [n for n in data.keys()]
 
         axs[statistics.index(entry)].bar(nucleotides, stats, color=colors[statistics.index(entry)])
-        axs[statistics.index(entry)].set_title(str(*entry))
+        axs[statistics.index(entry)].set_title(entry[0])
         axs[statistics.index(entry)].set_xlabel('Nucleotides')
         axs[statistics.index(entry)].set_ylabel('Quantity')
     plt.show()
@@ -147,5 +147,6 @@ histogram(statistics)
 
 with open('rna.txt', 'w') as r, open('statistics.txt', 'w') as s, open('amino_acids.txt', 'w') as a:
     r.write(rna)
-    s.write('\n'.join(str(x) for x in statistics))
+    statistics_for_biologists = ['>' + entry[0] + '\n' + str(entry[1])[1:-1].replace(':', '-') for entry in statistics]
+    s.write('\n'.join(str(x).replace("'", '') for x in statistics_for_biologists))
     a.write('\n'.join(str(x) for x in amino_acids))
