@@ -1,19 +1,19 @@
 ### Statistics for sorts of wine
 ***
 #### Gewürztraminer:
-  average price - 26.17, highest price - 197, smalles price - 6, most common region - Alsace, most common country - France, average score - 88.56
+  average price - 26.17, highest price - 197, lowest price - 6, most common region - Alsace, most common country - France, average score - 88.56
 
 #### Merlot:  
-  average price - 29.27, highest price - 625, smallest price - 4, most common region - Columbia Valley, most common country - US, averagescore - 87.16
+  average price - 29.27, highest price - 625, lowest price - 4, most common region - Columbia Valley, most common country - US, averagescore - 87.16
 
 #### Madera:
-  average price - none, highest price - none, smallest price - none, most common region - none, most common country - none, average score - none
+  average price - none, highest price - none, lowest price - none, most common region - none, most common country - none, average score - none
 
 #### Tempranillo:
-  average price - 31.14, highest price - 600, smallest price - 4, most common region - Rioja, most common country - Spain, average score - 87.47
+  average price - 31.14, highest price - 600, lowest price - 4, most common region - Rioja, most common country - Spain, average score - 87.47
 
 #### Red Blend:
-  average price - 36.09, highest price - 500, smallest - price - 5, most common region - Columbia Valley, most common country - Italy, average score - 88.37
+  average price - 36.09, highest price - 500, lowest price - 5, most common region - Columbia Valley, most common country - Italy, average score - 88.37
 
 ***
 #### Most expensive wine:
