@@ -28,8 +28,6 @@ def wraps_update(wrapped):
     return decorator
 
 
-# func = wraps(func)
-
 def print_result(func):
     @wraps_update(func)
     def wrapper(*args, **kwargs):
